@@ -16,3 +16,13 @@ html{
     width: 100%;
     margin: 0 auto;
 }
+.scroller{
+    width: 100%;
+    overflow-x: scroll;
+    height: 100px;
+    background: #000;
+    color: aliceblue;
+    display: flex;
+    column-gap: 100px;
+    scrollbar-width: none;    
+}

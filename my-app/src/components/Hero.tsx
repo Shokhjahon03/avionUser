@@ -26,7 +26,7 @@ using modern web technologies.
 
         <div className="hidden md:flex w-full">
             <div className="w-[60%] md:bg-[#2A254B]">
-            <div className=" w-full pl-[24px] pr-[24px] pt-[40px]">
+            <div className=" w-full pl-[44px] pr-[24px] pt-[80px]">
         <p className="text-[32px] font-normal leading-[44.8px] text-white">
         The furniture brand for the <br /> future, with timeless designs
         </p>
