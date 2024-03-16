@@ -26,3 +26,10 @@ html{
     column-gap: 100px;
     scrollbar-width: none;    
 }
+.sckrollers{
+    width: 1400px;
+    overflow-x: scroll;
+    display: flex;
+    column-gap: 20px;
+    scrollbar-width: none; 
+}
