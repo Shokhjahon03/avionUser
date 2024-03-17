@@ -12,9 +12,13 @@ html{
     text-decoration: none;
 }
 .container{
-    max-width: 1440px;
+    max-width: 1323px;
     width: 100%;
     margin: 0 auto;
+    padding: 0  20px;
+}
+body{
+    color: #2A254B;
 }
 .scroller{
     width: 100%;
@@ -27,9 +31,11 @@ html{
     scrollbar-width: none;    
 }
 .sckrollers{
-    width: 1400px;
-    overflow-x: scroll;
+    width: 100%;
     display: flex;
-    column-gap: 20px;
-    scrollbar-width: none; 
+    column-gap: 10px;
+    scrollbar-width: none;
+    /* background-color: #333; */
+    overflow: auto;
+    white-space: nowrap;
 }

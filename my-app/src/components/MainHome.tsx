@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import carimg from '../imgs/Delivery.svg'
 import pur from '../imgs/Purchase.svg'
@@ -6,7 +8,30 @@ import photo1 from '../imgs/Photo1.png'
 import photo2 from '../imgs/Photo2.png'
 import photo3 from '../imgs/Photo3.png'
 import photo4 from '../imgs/Photo.png'
+import allDatas from '@/store/store'
+import { useEffect } from 'react'
+import pp from '../imgs/Image.png'
+import Footer from './Footer'
 const MainHome = () => {
+
+  let{loading,datas,getDatas}=allDatas()
+
+  useEffect(()=>{
+    getDatas()
+  },[])
+
+let url=new URL (
+  'https://firebasestorage.googleapis.com/v0/b/mernblog-snd.appspot.com/o/1710543813228-Photo%20(2).png?alt=media&token=5d71d8dc-2c36-47bd-8b0b-9b2366477ff'
+)
+
+useEffect(()=>{
+  console.log(url.pathname);
+  console.log(url.port);
+  console.log(url.hostname);
+  
+  
+},[])
+
   return (
     <>
      <section>
@@ -45,28 +70,28 @@ real passion and craftmanship</p>
       <section className='pt-[48px] w-full'>
        <div className="container">
         <div className='w-full'>
-        <p className=' pl-[26px] mb-[36px]'>New ceramics</p>
+        <p className=' pl-[26px] text-[#2A254B] mb-[36px] lg:text-[32px] lg:pl-[80px]'>New ceramics</p>
 
           <div className='w-full flex justify-center gap-x-[16px] gap-y-[20px] flex-wrap'>
           <div>
-            <Image className='mb-[24px]' src={photo1} width={163} height={288} alt='alt' />
-            <p className='mb-[8px]'>Rustic Vase Set</p>
-            <p>£250</p>
+            <Image className='mb-[24px] lg:w-[305px] lg:h-[375px]' src={photo1} width={163} height={288} alt='alt'  />
+            <p className='mb-[8px] lg:text-[20px]'>Rustic Vase Set</p>
+            <p className='lg:text-[18px]'>£250</p>
           </div>
           <div>
-            <Image className='mb-[24px]' src={photo2} width={163} height={288} alt='alt' />
-            <p className='mb-[8px]'>The Dandy chair</p>
-            <p>£399</p>
+            <Image className='mb-[24px] lg:w-[305px] lg:h-[375px]' src={photo2} width={163} height={288} alt='alt'  />
+            <p className='mb-[8px] lg:text-[20px]'>The Dandy chair</p>
+            <p className='lg:text-[18px]'>£399</p>
           </div>
           <div>
-            <Image className='mb-[24px]' src={photo3} width={163} height={288} alt='alt' />
-            <p className='mb-[8px]'>The Silky Vase</p>
-            <p>£125</p>
+            <Image className='mb-[24px] lg:w-[305px] lg:h-[375px]' src={photo3} width={163} height={288} alt='alt'  />
+            <p className='mb-[8px] lg:text-[20px]'>The Silky Vase</p>
+            <p className='lg:text-[18px]'>£125</p>
           </div>
           <div>
-            <Image className='mb-[24px]' src={photo4} width={163} height={288} alt='alt' />
-            <p className='mb-[8px]'>The Dandy chair</p>
-            <p>£250</p>
+            <Image className='mb-[24px] lg:w-[305px] lg:h-[375px]' src={photo4} width={163} height={288} alt='alt'  />
+            <p className='mb-[8px] lg:text-[20px]'>The Dandy chair</p>
+            <p className='lg:text-[18px]'>£250</p>
           </div>
           </div>
           <div className='w-full flex justify-center'>
@@ -83,55 +108,55 @@ real passion and craftmanship</p>
 
 
 
-      <section className='pt-[48px] relative'>
-        <div className="container">
-          <div className='w-full'>
-              <p className='mb-[36]'>Our popular products</p>
+      <section className='pt-[48px] relative pb-[38px]'>
+        <div className="container pl-[26px]">
+          <div className='w-full '>
+              <p className='mb-[36px] text-[#2A254B] lg:text-[32px]'>Our popular products</p>
               </div>
-              <div className='sckrollers absolute top-[109px] left-0'>
-              <div className='w-[200px]'>
-                      <Image className='mb-[24px]' src={photo4} width={263} height={288} alt='alt' />
-                      <p className='mb-[8px]'>The Dandy chair</p>
-                      <p>£250</p>
-                </div>
-                <div>
-                      <Image className='mb-[24px]' src={photo4} width={163} height={288} alt='alt' />
-                      <p className='mb-[8px]'>The Dandy chair</p>
-                      <p>£250</p>
-                </div>
-                <div>
-                      <Image className='mb-[24px]' src={photo4} width={163} height={288} alt='alt' />
-                      <p className='mb-[8px]'>The Dandy chair</p>
-                      <p>£250</p>
-                </div>
-                <div>
-                      <Image className='mb-[24px]' src={photo4} width={163} height={288} alt='alt' />
-                      <p className='mb-[8px]'>The Dandy chair</p>
-                      <p>£250</p>
-                </div>
-                <div className='w-[200px]'>
-                      <Image className='mb-[24px]' src={photo4} width={263} height={288} alt='alt' />
-                      <p className='mb-[8px]'>The Dandy chair</p>
-                      <p>£250</p>
-                </div>
-                <div>
-                      <Image className='mb-[24px]' src={photo4} width={163} height={288} alt='alt' />
-                      <p className='mb-[8px]'>The Dandy chair</p>
-                      <p>£250</p>
-                </div>
-                <div>
-                      <Image className='mb-[24px]' src={photo4} width={163} height={288} alt='alt' />
-                      <p className='mb-[8px]'>The Dandy chair</p>
-                      <p>£250</p>
-                </div>
-                <div>
-                      <Image className='mb-[24px]' src={photo4} width={163} height={288} alt='alt' />
-                      <p className='mb-[8px]'>The Dandy chair</p>
-                      <p>£250</p>
-                </div>
+              <div className='sckrollers pl cursor-pointer'>
+              {
+                datas.map((e:{image:string,name:string,price:number,category:string,description:string},i)=>(
+                  <div className=' hover:bg-slate-200 w-[200px] p-[10px] rounded-lg' key={i} >
+                      <img className=' rounded-md' src={e.image} alt="alt" />
+                      <p className='mb-[8px] lg:mt-[10px] lg:mb-[15px]'>{e.name}</p>
+                      <p>£{e.price}</p>
+                  </div>
+                ))
+              }
+              </div>
+              <div className='w-full flex justify-center mt-[32px] lg:mt-[42px]'>
+                <button className=' w-[342px] ld:w-[170px] h-[56px] bg-[#F9F9F9]'>View collection</button>
               </div>
           </div>
       </section>
+      <section className='w-full pb-[38px]'>
+              <div className="container">
+                <div className='w-full flex flex-col items-center'>
+                  <p className='text-[20px] lg:text-[36px] mb-[16px]'>Join the club and get the benefits</p>
+                  <p className='text-[14px] lg:text-[16px] lg:text-center'>Sign up for our newsletter and receive exclusive offers on new <br className='lg:block' /> ranges, sales, pop up stores and more</p>
+                  <div className='w-[342px] lg:w-[472px] flex h-[56px] mt-[64px] lg:mt-[72px]'>
+                    <input className='w-[224px] lg:w-[354px] h-[full] pl-[32px] bg-[#F9F9F9]' placeholder='your@email.com' type="text" />
+                    <button className='w-[118px] h-full bg-[#2A254B] text-white'>Sign up</button>
+                  </div>
+                </div>
+              </div>
+      </section>
+      <section className='w-full'>
+              <div className="containe2">
+                <div className='w-full flex flex-col lg:flex-row'>
+                  <div className='mb-[38px] pt-[48px] pl-[24px] pr-[24px]'>
+                    <p className='text-[20px] mb-[12px]'>From a studio in London to a global brand with over 400 outlets</p>
+                    <p className='text-[14px]'>When we started Avion, the idea was simple. Make high quality furniture affordable and available for the mass market.</p>
+                    <p className='text-[14px]'> Handmade, and lovingly crafted furniture and homeware is what we live, breathe and design so our Chelsea boutique become the hotbed for the London interior design community.</p>
+                    <div className='w-full flex justify-center mt-[64px]'>
+                    <button className='bg-[#F9F9F9] w-[342px] h-[56px] text-[16px]'>Get in touch</button>
+                    </div>
+                  </div>
+                  <Image className='w-[390px] h-[358px]' src={pp} alt="alt" />
+                </div>
+              </div>
+      </section>
+      <Footer/>
     </>
   )
 }

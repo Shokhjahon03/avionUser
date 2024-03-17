@@ -33,7 +33,7 @@ using modern web technologies.
         <button className="mt-[32px] w-[180px] h-[56px] text-[16px] leading-[24px] font-normal text-white bg-[#F9F9F926] mb-[24px]">
         View collection
         </button>
-        <p className="text-[18px] leading-[27px] font-normal mt-[280px] text-white">
+        <p className="text-[18px] leading-[27px] font-normal mt-[260px] text-white">
         A new era in eco friendly furniture with Avelon, the French luxury retail brand <br />
 with nice fonts, tasteful colors and a beautiful way to display things digitally <br />
 using modern web technologies.
@@ -41,8 +41,8 @@ using modern web technologies.
         
         </div>
             </div>
-            <div className="w-[40%]">
-                <Image width={550} height={400} alt="img" src={imgtable}/>
+            <div className="w-[40%] h-full">
+                <Image className="w-full h-full" alt="img" src={imgtable}/>
             </div>
         </div>
 
