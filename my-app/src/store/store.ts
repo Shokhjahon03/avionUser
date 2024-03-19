@@ -9,7 +9,9 @@ type storeType={
     iddata:any,
     torf:boolean,
     stTorf:()=>void,
-    cart:any
+    cart:any,
+    postdatacart:(sellectprod:any)=>void,
+    getprod:()=>void
 }
 
 let allDatas = create<storeType>((set) => ({
@@ -17,8 +19,18 @@ let allDatas = create<storeType>((set) => ({
     torf:false,
     datas:[],
     iddata:{},
-    cart,
-
+    cart:[],
+    postdatacart:async(sellectprod)=>{
+      axios.post('https://65f258c5034bdbecc7649f36.mockapi.io/app/local',sellectprod)
+    },
+    getprod:async()=>{
+      let res=await axios.get('https://65f258c5034bdbecc7649f36.mockapi.io/app/local')
+      let dat=await res.data
+      set(()=>({
+        cart:dat
+      }))
+    }
+,
     getDatas:async()=>{
        try {
         let res=await axios.get('https://65f258c5034bdbecc7649f36.mockapi.io/app/products')

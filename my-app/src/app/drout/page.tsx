@@ -18,9 +18,19 @@ type al={
 }
 const page = () => {
     let [c,setC]=useState(1)
-    let {iddata,datas,getDatas}=allDatas()
+    let {iddata,getDatas,cart,postdatacart,getIddata}=allDatas()
 
-    
+      let func=()=>{
+        let x={
+          name:iddata.name,
+          image:iddata.image,
+          category:iddata.category,
+          description:iddata.description,
+          price:iddata.price,
+          soni:c
+        }
+        postdatacart(x)
+      }
   
     useEffect(()=>{
         getDatas()
@@ -84,7 +94,7 @@ const page = () => {
                                         <button onClick={()=>setC(c+1)} className='text-[16px] text-[#CAC6DA]'>+</button>
                                     </div>
                                 </div>
-                                <button  className='w-[342px] h-[56px] mt-[16px] text-white bg-[#2A254B]'>
+                                <button onClick={()=>func()}  className='w-[342px] h-[56px] mt-[16px] text-white bg-[#2A254B]'>
                                 Add to cart
                                 </button>
                             </div>
