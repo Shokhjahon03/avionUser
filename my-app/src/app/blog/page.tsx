@@ -12,7 +12,8 @@ const page = () => {
 
 let {loading,datas,getDatas,getIddata}=allDatas()
 let [arr,setArr]=useState<number>(6)
-
+let [filt,setFilt]=useState<any>('')
+let [filters,setFil]=useState<any>([])
 let getval=async()=>{
     let x=await axios.get('https://65f258c5034bdbecc7649f36.mockapi.io/app/products')
     let y=await x.data
@@ -22,6 +23,17 @@ let func=()=>{
     setArr(arr+1)
     getDatas()
 }
+let filter=()=>{
+    if (filt!=='') {
+        let newarr=datas.filter((e:any)=>e.category.includes(filt))
+        setFil(newarr)
+    }
+}
+useEffect(()=>{
+    filter()
+    console.log(filt);
+    
+},[filt])
 
 useEffect(()=>{
     getDatas()
@@ -63,23 +75,23 @@ useEffect(()=>{
                                         <p className='mb-[20px]'>Product type</p>
                                          <fieldset className="flex max-w-md flex-col gap-4">
                                         <div className="flex items-center gap-2">
-                                            <Radio className=' rounded cursor-pointer' id="united-state" name="countries" value="furniture" defaultChecked />
+                                            <Radio onChange={(e)=>setFilt(e.target.value)} className=' rounded cursor-pointer' id="united-state" name="countries" value="furniture" defaultChecked />
                                             <label htmlFor="united-state">Furniture</label>
                                         </div>
                                         <div className="flex items-center gap-2">
-                                            <Radio className=' rounded cursor-pointer' id="germany" name="countries" value="homeware" />
+                                            <Radio onChange={(e)=>setFilt(e.target.value)} className=' rounded cursor-pointer' id="germany" name="countries" value="homeware" />
                                             <Label htmlFor="germany">Homeware</Label>
                                         </div>
                                         <div className="flex items-center gap-2">
-                                            <Radio className=' rounded cursor-pointer' id="spain" name="countries" value="sofas" />
+                                            <Radio onChange={(e)=>setFilt(e.target.value)} className=' rounded cursor-pointer' id="spain" name="countries" value="sofas" />
                                             <Label htmlFor="spain">Sofas</Label>
                                         </div>
                                         <div className="flex items-center gap-2">
-                                            <Radio className=' rounded cursor-pointer' id="uk" name="countries" value="Light fittings" />
+                                            <Radio onChange={(e)=>setFilt(e.target.value)} className=' rounded cursor-pointer' id="uk" name="countries" value="Light fittings" />
                                             <Label htmlFor="uk">Light fittings</Label>
                                         </div>
                                         <div className="flex items-center gap-2">
-                                            <Radio className=' rounded cursor-pointer' id="china" name="countries" value="accessories" disabled />
+                                            <Radio onChange={(e)=>setFilt(e.target.value)} className=' rounded cursor-pointer' id="china" name="countries" value="accessories" disabled />
                                             <Label htmlFor="china" disabled>
                                             Accessories
                                             </Label>
@@ -112,14 +124,30 @@ useEffect(()=>{
 
                         
                            {
-                                datas.slice(0,6).map((e:{image:string,name:string,price:number,category:string,description:string,id:number},i:number)=>(
+                            filt ? <>
+                            
+                             {
+                                filters.map((e:{image:string,name:string,price:number,category:string,description:string,id:number},i:number)=>(
                                     <Link href='/drout' onClick={()=>getIddata(e.id)} key={i}>
                                         <img className='w-[163px] lg:w-[305px] lg:h-[375px] h-[201px]' alt='s' src={e.image}/>
-                                        <p>{e.name}</p>
-                                        <p>{e.price}</p>
+                                        <p className='text-[20px] mt-[24px] mb-[8px]'>{e.name}</p>
+                                        <p className='text-[18px]'>{e.price}</p>
                                     </Link>
                                 ))
                             }
+                            </>:<>
+                            {/* {
+                                datas.slice(0,6).map((e:{image:string,name:string,price:number,category:string,description:string,id:number},i:number)=>(
+                                    <Link href='/drout' onClick={()=>getIddata(e.id)} key={i}>
+                                        <img className='w-[163px] lg:w-[305px] lg:h-[375px] h-[201px]' alt='s' src={e.image}/>
+                                        <p className='text-[20px] mt-[24px] mb-[8px]'>{e.name}</p>
+                                        <p className='text-[18px]'>{e.price}</p>
+                                    </Link>
+                                ))
+                            } */}
+                            null
+                            </>
+                           }
                        
 
                         </div>
@@ -131,8 +159,8 @@ useEffect(()=>{
                                 datas.slice(0,9).map((e:{image:string,name:string,price:number,category:string,description:string,id:number},i:number)=>(
                                     <Link href='/drout' onClick={()=>getIddata(e.id)} key={i}>
                                         <img className='w-[163px] lg:w-[305px] lg:h-[375px] h-[201px]' alt='s' src={e.image}/>
-                                        <p>{e.name}</p>
-                                        <p>{e.price}</p>
+                                        <p className='text-[20px] mt-[24px] mb-[8px]'>{e.name}</p>
+                                        <p className='text-[18px]'>{e.price}</p>
                                     </Link>
                                 ))
                             }

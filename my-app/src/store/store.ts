@@ -11,7 +11,8 @@ type storeType={
     stTorf:()=>void,
     cart:any,
     postdatacart:(sellectprod:any)=>void,
-    getprod:()=>void
+    getprod:()=>void,
+    dal:(id:number)=>void
 }
 
 let allDatas = create<storeType>((set) => ({
@@ -56,6 +57,9 @@ let allDatas = create<storeType>((set) => ({
           torf:  true
         }
       ))
+    },
+    dal:(id:number)=>{
+      axios.delete(`https://65f258c5034bdbecc7649f36.mockapi.io/app/local/`)
     }
   }))
 

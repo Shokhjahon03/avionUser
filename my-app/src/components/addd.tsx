@@ -1,11 +1,13 @@
 'use client'
 
+import allDatas from "@/store/store"
 import { useState } from "react"
 
 
 type asss={name:string,image:string,price:number,category:string,description:string,id:number,soni:number}
 
 const Addd = ({e,all,setAll}:any) => {
+  let {dal}=allDatas()
     let [a,setA]=useState(e.soni)
 
     let funcMinus=()=>{
@@ -21,7 +23,7 @@ const Addd = ({e,all,setAll}:any) => {
 
   return (
     <>
-      <div className="w-full flex justify-between items-center mt-[50px] mb-[50px] pb-[50px] border-b">
+      <div className="w-full flex justify-between items-center mt-[50px] mb-[50px] pb-[50px] border-b relative">
                       <div className="w-[309px] gap-x-[21px] flex">
                         <img className="w-[300px] h-[300px]" src={e.image} alt="alt" />
                         <div className="pt-[12px]">
@@ -38,6 +40,7 @@ const Addd = ({e,all,setAll}:any) => {
                       </div>
                       <p>£{a*e.price}</p>
                       </div>
+                      <button onClick={()=>dal(e.id)} className=" absolute top-[-20px] left-[-20px] text-white bg-black w-[20px] h-[20px] flex justify-center items-center">x</button>
                   </div>
     </>
   )
