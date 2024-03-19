@@ -12,14 +12,20 @@ html{
     text-decoration: none;
 }
 .container{
-    max-width: 1323px;
+    max-width: 1440px;
     width: 100%;
     margin: 0 auto;
     padding: 0  20px;
 }
+.container2{
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
 body{
     color: #2A254B;
 }
+
 .scroller{
     width: 100%;
     overflow-x: scroll;
@@ -38,4 +44,18 @@ body{
     /* background-color: #333; */
     overflow: auto;
     white-space: nowrap;
+}
+.bgs{
+    width: 100%;
+    background-image: url('../imgs/bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.heros{
+    width: 100%;
+    background-image: url('../imgs/Page\ Headers.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }

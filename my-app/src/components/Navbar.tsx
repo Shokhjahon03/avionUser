@@ -1,3 +1,4 @@
+import Link from "next/link"
 
 const Navbar = () => {
   return (
@@ -6,10 +7,15 @@ const Navbar = () => {
        <div className="container md:pl-[20px] md:pr-[20px]">
         <div className="navbar w-full h-[69px] flex  items-center justify-between pl-[24px] pr-[20px] md:border-b">
           <button className="hidden md:block"><i className='bx bx-search'></i></button>
-            <p className="text-[#22202E] text-[24px] leading-[29.52px] font-normal">Avion</p>
-            <div className="w-[52px] flex justify-between items-center">
+            <p className="text-[#686098] text-[24px] leading-[29.52px] font-normal">Avion</p>
+            <div className="w-[52px]  flex justify-between items-center relative">
+              <div className="hidden lg:flex w-[215px] absolute top-0 left-[-260px] justify-between text-[16px] text-[#726E8D]">
+                <Link href='/aboute'>About us</Link>
+                <Link href='/as'>Contact</Link>
+                <Link href='/blog'>Blog</Link>
+              </div>
            <button  className="md:hidden"><i className='bx bx-search md:hidden'></i></button>
-           <button  className="hidden md:block"><i className='bx bx-cart-alt'></i></button>
+           <Link href='/cart' className="hidden md:block"><i className='bx bx-cart-alt'></i></Link>
             <button  className="md:hidden"><i className='bx bx-menu' ></i></button>
             <button className="hidden md:block"><i className='bx bx-user-circle'></i></button>
             </div>

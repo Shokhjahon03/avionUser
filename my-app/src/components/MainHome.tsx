@@ -19,19 +19,7 @@ const MainHome = () => {
   useEffect(()=>{
     getDatas()
   },[])
-
-let url=new URL (
-  'https://firebasestorage.googleapis.com/v0/b/mernblog-snd.appspot.com/o/1710543813228-Photo%20(2).png?alt=media&token=5d71d8dc-2c36-47bd-8b0b-9b2366477ff'
-)
-
-useEffect(()=>{
-  console.log(url.pathname);
-  console.log(url.port);
-  console.log(url.hostname);
   
-  
-},[])
-
   return (
     <>
      <section>
@@ -115,7 +103,7 @@ real passion and craftmanship</p>
               </div>
               <div className='sckrollers pl cursor-pointer'>
               {
-                datas.map((e:{image:string,name:string,price:number,category:string,description:string},i)=>(
+                datas.map((e:{image:string,name:string,price:number,category:string,description:string},i:number)=>(
                   <div className=' hover:bg-slate-200 w-[200px] p-[10px] rounded-lg' key={i} >
                       <img className=' rounded-md' src={e.image} alt="alt" />
                       <p className='mb-[8px] lg:mt-[10px] lg:mb-[15px]'>{e.name}</p>
@@ -143,16 +131,16 @@ real passion and craftmanship</p>
       </section>
       <section className='w-full'>
               <div className="containe2">
-                <div className='w-full flex flex-col lg:flex-row'>
+                <div className='w-full flex flex-col lg:justify-between lg:flex-row'>
                   <div className='mb-[38px] pt-[48px] pl-[24px] pr-[24px]'>
-                    <p className='text-[20px] mb-[12px]'>From a studio in London to a global brand with over 400 outlets</p>
-                    <p className='text-[14px]'>When we started Avion, the idea was simple. Make high quality furniture affordable and available for the mass market.</p>
-                    <p className='text-[14px]'> Handmade, and lovingly crafted furniture and homeware is what we live, breathe and design so our Chelsea boutique become the hotbed for the London interior design community.</p>
-                    <div className='w-full flex justify-center mt-[64px]'>
-                    <button className='bg-[#F9F9F9] w-[342px] h-[56px] text-[16px]'>Get in touch</button>
+                    <p className='text-[20px] lg:text-[24px] mb-[12px] lg:mb-[25px]'>From a studio in London to a global brand with <br className='hidden lg:block' /> over 400 outlets</p>
+                    <p className='text-[14px] mb-[40px] lg:text-[16px] '>When we started Avion, the idea was simple. Make high quality furniture <br className='hidden lg:block' /> affordable and available for the mass market.</p>
+                    <p className='text-[14px] lg:text-[16px]'> Handmade, and lovingly crafted furniture and homeware is what we live,<br className='hidden lg:block' /> breathe and design so our Chelsea boutique become the<br className='hidden lg:block' /> hotbed for the London interior design community.</p>
+                    <div className='w-full flex justify-center mt-[64px] lg:mt-[196px] lg:justify-start'>
+                    <button className='bg-[#F9F9F9] w-[342px] h-[56px] text-[16px] lg:w-[150px]'>Get in touch</button>
                     </div>
                   </div>
-                  <Image className='w-[390px] h-[358px]' src={pp} alt="alt" />
+                  <Image className='w-[390px] h-[358px] lg:w-[720px] lg:h-[603px]' src={pp} alt="alt" />
                 </div>
               </div>
       </section>
