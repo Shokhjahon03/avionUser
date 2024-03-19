@@ -40,7 +40,7 @@ const Navbar = () => {
         <div className={z?'left md:hidden':'right md:hidden'}>
           <Link href='/'>Home</Link>
           <Link href='/aboute'>Aboute</Link>
-          <Link href='/blog'>Home</Link>
+          <Link href='/blog'>Blog</Link>
           <Link href='/cart'>Cart</Link>
           </div>
 

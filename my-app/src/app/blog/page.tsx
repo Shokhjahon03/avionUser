@@ -136,7 +136,7 @@ useEffect(()=>{
                                 ))
                             }
                             </>:<>
-                            {/* {
+                            {
                                 datas.slice(0,6).map((e:{image:string,name:string,price:number,category:string,description:string,id:number},i:number)=>(
                                     <Link href='/drout' onClick={()=>getIddata(e.id)} key={i}>
                                         <img className='w-[163px] lg:w-[305px] lg:h-[375px] h-[201px]' alt='s' src={e.image}/>
@@ -144,8 +144,8 @@ useEffect(()=>{
                                         <p className='text-[18px]'>{e.price}</p>
                                     </Link>
                                 ))
-                            } */}
-                            null
+                            }
+                            
                             </>
                            }
                        
