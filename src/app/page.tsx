@@ -10,13 +10,10 @@ import Image from "next/image";
 export default function Home() {
   let {torf}=allDatas()
   return (
-   <>
-    {
-      torf ? <>
+    <>
       <Navbar/>
     <Hero/>
-    <MainHome/></>:<LoginP/>
-    }
-   </>
+    <MainHome/>
+    </>
   );
 }

@@ -90,3 +90,6 @@ body{
     z-index: 50;
 
 }
+img{
+    object-fit: cover;
+}

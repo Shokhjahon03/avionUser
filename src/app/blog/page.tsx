@@ -75,26 +75,32 @@ useEffect(()=>{
                                         <p className='mb-[20px]'>Product type</p>
                                          <fieldset className="flex max-w-md flex-col gap-4">
                                         <div className="flex items-center gap-2">
-                                            <Radio onChange={(e)=>setFilt(e.target.value)} className=' rounded cursor-pointer' id="united-state" name="countries" value="furniture" defaultChecked />
+                                            <Radio onChange={(e)=>setFilt(e.target.value)} className=' rounded cursor-pointer' id="united-state" name="countries" value="Furniture" defaultChecked />
                                             <label htmlFor="united-state">Furniture</label>
                                         </div>
                                         <div className="flex items-center gap-2">
-                                            <Radio onChange={(e)=>setFilt(e.target.value)} className=' rounded cursor-pointer' id="germany" name="countries" value="homeware" />
-                                            <Label htmlFor="germany">Homeware</Label>
+                                            <Radio onChange={(e)=>setFilt(e.target.value)} className=' rounded cursor-pointer' id="germany" name="countries" value="Shoes" />
+                                            <Label htmlFor="germany">Clothes</Label>
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <Radio onChange={(e)=>setFilt(e.target.value)} className=' rounded cursor-pointer' id="spain" name="countries" value="sofas" />
-                                            <Label htmlFor="spain">Sofas</Label>
+                                            <Label htmlFor="spain">Shoes</Label>
                                         </div>
                                         <div className="flex items-center gap-2">
-                                            <Radio onChange={(e)=>setFilt(e.target.value)} className=' rounded cursor-pointer' id="uk" name="countries" value="Light fittings" />
-                                            <Label htmlFor="uk">Light fittings</Label>
+                                            <Radio onChange={(e)=>setFilt(e.target.value)} className=' rounded cursor-pointer' id="uk" name="countries" value="household" />
+                                            <Label htmlFor="uk">household</Label>
                                         </div>
                                         <div className="flex items-center gap-2">
-                                            <Radio onChange={(e)=>setFilt(e.target.value)} className=' rounded cursor-pointer' id="china" name="countries" value="accessories" disabled />
-                                            <Label htmlFor="china" disabled>
-                                            Accessories
-                                            </Label>
+                                            <Radio onChange={(e)=>setFilt(e.target.value)} className=' rounded cursor-pointer' id="china" name="countries" value="phones" disabled />
+                                            <Label htmlFor="china" disabled>phones</Label>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <Radio onChange={(e)=>setFilt(e.target.value)} className=' rounded cursor-pointer' id="spain" name="countries" value="computers" />
+                                            <Label htmlFor="spain">computers</Label>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <Radio onChange={(e)=>setFilt(e.target.value)} className=' rounded cursor-pointer' id="spain" name="countries" value="other" />
+                                            <Label htmlFor="spain">other</Label>
                                         </div>
                                         </fieldset>
                                     </div>
@@ -102,16 +108,16 @@ useEffect(()=>{
                                         <p className='mb-[20px]'>Price</p>
                                     <fieldset className="flex max-w-md flex-col gap-4">
                                         <div className="flex items-center gap-2">
-                                            <Radio className=' rounded cursor-pointer' id="united-state" name="countries" value="furniture" defaultChecked />
-                                            <label htmlFor="united-state">1-100</label>
+                                            <Radio className=' rounded cursor-pointer' id="united-state" name="countries" value="100" defaultChecked />
+                                            <label htmlFor="united-state">1-100 $</label>
                                         </div>
                                         <div className="flex items-center gap-2">
-                                            <Radio id="germany" name="countries" value="homeware" />
-                                            <Label htmlFor="germany">Homeware</Label>
+                                            <Radio id="germany" name="countries" value="1000" />
+                                            <Label htmlFor="germany">100-1000 $</Label>
                                         </div>
                                         <div className="flex items-center gap-2">
-                                            <Radio id="spain" name="countries" value="sofas" />
-                                            <Label htmlFor="spain">Sofas</Label>
+                                            <Radio id="spain" name="countries" value="10000" />
+                                            <Label htmlFor="spain">1000-10000 $</Label>
                                         </div>
                                         </fieldset>
                                     </div>
@@ -131,17 +137,17 @@ useEffect(()=>{
                                     <Link href='/drout' onClick={()=>getIddata(e.id)} key={i}>
                                         <img className='w-[163px] lg:w-[305px] lg:h-[375px] h-[201px]' alt='s' src={e.image}/>
                                         <p className='text-[20px] mt-[24px] mb-[8px]'>{e.name}</p>
-                                        <p className='text-[18px]'>{e.price}</p>
+                                        <p className='text-[18px]'>{e.price}$</p>
                                     </Link>
                                 ))
                             }
                             </>:<>
                             {
-                                datas.slice(0,6).map((e:{image:string,name:string,price:number,category:string,description:string,id:number},i:number)=>(
+                                datas.map((e:{image:string,name:string,price:number,category:string,description:string,id:number},i:number)=>(
                                     <Link href='/drout' onClick={()=>getIddata(e.id)} key={i}>
                                         <img className='w-[163px] lg:w-[305px] lg:h-[375px] h-[201px]' alt='s' src={e.image}/>
                                         <p className='text-[20px] mt-[24px] mb-[8px]'>{e.name}</p>
-                                        <p className='text-[18px]'>{e.price}</p>
+                                        <p className='text-[18px]'>{e.price}$</p>
                                     </Link>
                                 ))
                             }
@@ -156,11 +162,11 @@ useEffect(()=>{
 
                         
                            {
-                                datas.slice(0,9).map((e:{image:string,name:string,price:number,category:string,description:string,id:number},i:number)=>(
+                                datas.map((e:{image:string,name:string,price:number,category:string,description:string,id:number},i:number)=>(
                                     <Link href='/drout' onClick={()=>getIddata(e.id)} key={i}>
                                         <img className='w-[163px] lg:w-[305px] lg:h-[375px] h-[201px]' alt='s' src={e.image}/>
                                         <p className='text-[20px] mt-[24px] mb-[8px]'>{e.name}</p>
-                                        <p className='text-[18px]'>{e.price}</p>
+                                        <p className='text-[18px]'>{e.price}$</p>
                                     </Link>
                                 ))
                             }
